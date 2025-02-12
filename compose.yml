@@ -1,0 +1,17 @@
+#Environement dev nginx
+services:
+  monnginx:
+    build: ./front 
+    ports:
+      - "8000:80"
+    volumes:
+      - ./front/app:/usr/share/nginx/html
+    environment:
+      - USER=toto
+      - MYSQL_PASSWORD=${PASSWORD}
+      
+          #source: mes_datas
+       
+          #target: /usr/share/nginx/html
+#volumes:
+  #mes_datas:          
